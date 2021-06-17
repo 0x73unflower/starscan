@@ -1,3 +1,4 @@
+<div class="snippet-clipboard-content position-relative">
 <pre>
   <code>
                     Starscan v0.4
@@ -10,5 +11,6 @@ ____/ // /_ / /_/ /_  /   _(__  )/ /__ / /_/ /_  / / /
                 A project by sunflower 🌻
   <code>
 </pre>
+</div>
 
 <h3>A threaded port scanner made for penetration tests!</h3>
