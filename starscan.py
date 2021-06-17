@@ -1,9 +1,3 @@
-# Add a text to write to
-# Set up threading +
-# Add options to scan individual ports +
-# Nmap intergration
-# Set up arguments
-
 import socket
 import threading
 from queue import Queue
@@ -26,7 +20,7 @@ print(
 ███████╗   ██║   ███████║██████╔╝███████╗██║     ███████║██╔██╗ ██║            
 ╚════██║   ██║   ██╔══██║██╔══██╗╚════██║██║     ██╔══██║██║╚██╗██║            
 ███████║   ██║   ██║  ██║██║  ██║███████║╚██████╗██║  ██║██║ ╚████║            
-╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝ Version 0.3
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝ Version 0.4
 """
 )
 time.sleep(0.5)
@@ -71,12 +65,12 @@ def main():
 
     q = Queue()
 
-    for i in range(200):
+    for i in range(500):
         t = threading.Thread(target=threader, daemon=True)
         t.start()
 
-    #for worker in range(1, int(portRange)):
-        #q.put(worker)
+    # for worker in range(1, int(portRange)):
+    #     q.put(worker)
 
     for worker in range(int(portRange)):
         q.put(worker)
@@ -94,21 +88,26 @@ def main():
 
     # Nmap
 
-    #def nmap():
-        #try:
-            #nmapScan = input(f'Would you like to run a suggested scan on ports {discoveredPorts} (y/n): ')
-            #if nmapScan == 'y':
-                #nmapFile = 'nmap -p{port} -sC -sV -T4 {ip}'.format(port=','.join(discoveredPorts), ip=remoteServerIP)
-                #print(nmapFile)
-                #os.mkdir(remoteServerIP)
-                #os.chdir(remoteServerIP)
-                #os.system(nmapFile)
-        #except FileExistsError as e:
-           #print(e)
-            #exit()
-    #nmap()
-
-
+    # def nmap():
+    #     try:
+    #         nmapScan = input(f'Would you like to run a suggested scan on ports {discoveredPorts} (y/n): ')
+    #         if nmapScan == 'y':
+    #             cmd = 'nmap -p{port} -sC -sV -T4 {ip}'.format(port=','.join(discoveredPorts), ip=remoteServerIP)
+    #             print(cmd)
+    #             #Make a directory to write the found ports in NMAP
+    #             #os.mkdir(f'{remoteServerIP} / STARSCAN')
+    #             #os.chdir(remoteServerIP)
+    #             os.system(cmd)
+    #     except FileExistsError as e:
+    #         print(e)
+    #         exit()
+    #     except Exception as noPorts:
+    #         print('[!] No ports specified!', noPorts)
+    # nmap()
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('[!] Exiting...')
+        quit()
