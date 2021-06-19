@@ -15,8 +15,9 @@ with Python.
 It can be ran on Windows but nmap won't work.
 
 # Technologies
-Project was created with
-* Python
+Starscan currently works with:
+* Linux / Unix
+* Windows
 
 # Installation
 ```
