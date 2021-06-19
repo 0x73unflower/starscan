@@ -6,7 +6,7 @@
 ╚════██║   ██║   ██╔══██║██╔══██╗╚════██║██║     ██╔══██║██║╚██╗██║
 ███████║   ██║   ██║  ██║██║  ██║███████║╚██████╗██║  ██║██║ ╚████║            
 ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
-                      For legal use only!
+                       For legal use only!
 ```
 # Starscan
 Starscan is a tool used for port scanning. It's a threaded scanner
