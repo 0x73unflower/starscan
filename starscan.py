@@ -79,10 +79,9 @@ def main():
     print(f"\nThe scan took {totalScanTime}.")
 
     # Nmap
-    if platform.system() == "Windows":
-        quit()
-
     def nmap():
+        if platform.system() == "Windows":
+            quit()
         nmapScan = input(f'Would you like to run a suggested scan on ports {discoveredPorts} (y/n): ')
         if nmapScan == 'y':
                 try:
